@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C I N E P H I L E Login & Sign Up Form</title>
+  <link rel="stylesheet" href="UA.css">
+  <style>
+    /* Additional styles for toggling forms */
+    .hidden {
+      display: none;
+    }
+
+    .wrapper {
+      position: relative;
+      max-width: 400px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 30px;
+      color: #fff;
+    }
+
+    .input-field input {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+      background: rgba(255, 255, 255, 0.1);
+      margin-bottom: 20px;
+      color: #fff;
+    }
+
+    .input-field label {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+
+    .forget {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .forget a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .register p {
+      text-align: center;
+    }
+
+    .register a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      outline: none;
+      border-radius: 5px;
+      background: #ff4d4d;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #ff3333;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    
+    .title {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 20px;
+      color: #fff;
+      font-family: 'Times New Roman', Times, serif;
+      letter-spacing: 0.5em;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="title">C I N E P H I L E</div>
+    <form id="signin-form" onsubmit="handleFormSubmit('signin-form'); return false;">
+      <h3>Login</h3>
+      <div class="input-field">
+        <input type="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
+        <label>Enter your email</label>
+      </div>
+      <div class="input-field">
+        <input type="password" required>
+        <label>Enter your password</label>
+      </div>
+      <div class="forget">
+        <label for="remember">
+          <input type="checkbox" id="remember">
+          <p>Remember me</p>
+        </label>
+        <a href="#">Forgot password?</a>
+      </div>
+      <button type="submit">Log In</button>
+      <div class="register">
+        <p>Don't have an account? <a href="#" onclick="toggleForms()">Register</a></p>
+      </div>
+    </form>
+    <form id="signup-form" class="hidden" onsubmit="handleFormSubmit('signup-form'); return false;">
+      <h3>Sign Up</h3>
+      <div class="input-field">
+        <input type="text" required>
+        <label>Username</label>
+      </div>
+      <div class="input-field">
+        <input type="text" required>
+        <label>Enter your email</label>
+      </div>
+      <div class="input-field">
+        <input type="password" required>
+        <label>Enter your password</label>
+      </div>
+      <div class="input-field">
+        <input type="password" required>
+        <label>Confirm your password</label>
+      </div>
+      <button type="submit">Sign Up</button>
+      <div class="register">
+        <p>Already have an account? <a href="#" onclick="toggleForms()">Login</a></p>
+      </div>
+    </form>
+  </div>
+
+  <script>
+    function toggleForms() {
+      const signinForm = document.getElementById('signin-form');
+      const signupForm = document.getElementById('signup-form');
+      signinForm.classList.toggle('hidden');
+      signupForm.classList.toggle('hidden');
+    }
+
+    // Function to handle form submission
+    function handleFormSubmit(formId) {
+      // Assuming your homepage URL is "homepage.html"
+      window.location.href = "home.html";
+    }
+  </script>
+</body>
+</html>
